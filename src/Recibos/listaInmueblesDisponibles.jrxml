@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="listaInmueblesDisponibles" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bb091746-da00-4b21-86bb-bbae4c04b151">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM `inmueble` INNER JOIN cliente on inmueble.idPropietario=cliente.idCliente WHERE inmueble.estado LIKE "Disponible"]]>
+	</queryString>
+	<field name="calle" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="piso" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dpto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="localidad" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="provincia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellido" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidoMaterno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="104" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="100" height="101" uuid="c765cc50-e7e7-4a5a-996e-46ac0ccb08ef"/>
+				<imageExpression><![CDATA["C:\\Users\\Nahuel\\Desktop\\SM Inmobiliaria\\src\\Imagenes\\smLogo-InicioSesion.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="135" y="38" width="388" height="35" uuid="14cf3d65-7c88-4fe9-ac93-90685e9a0631"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="32" isBold="true" isItalic="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Lista de Inmuebles Disponibles]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="23" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="92" height="23" uuid="d198be5f-53d2-4010-9833-4a17feb1b3bd"/>
+				<textElement>
+					<font fontName="Corbel" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Calle ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="81" height="23" uuid="531be939-a383-40ae-bb24-5c242e79e528"/>
+				<textElement>
+					<font fontName="Corbel" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Piso - Dpto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="0" width="100" height="23" uuid="9a365031-6cca-47fd-9a52-32a40b7adcf4"/>
+				<textElement>
+					<font fontName="Corbel" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Localidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="0" width="100" height="23" uuid="72a1e046-2362-484c-922b-406f477c9de0"/>
+				<textElement>
+					<font fontName="Corbel" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo Inmueble]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="405" y="0" width="100" height="23" uuid="b4520544-d98f-448a-812c-d68ba5472d2d"/>
+				<textElement>
+					<font fontName="Corbel" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Propietario]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="47" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="9829321a-ef77-485f-9271-34aa0d5ad146"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{calle}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="109" y="0" width="81" height="20" uuid="780eb877-d3e1-4302-a3f8-c54aeebee0bd"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{piso}+"  "+$F{dpto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="0" width="100" height="20" uuid="f89d3587-1eba-40ee-a2f3-a22e795d9fe7"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{localidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="0" width="100" height="20" uuid="52ebcb98-2ba5-426e-b001-64aa834d7d7c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="0" width="132" height="20" uuid="751cb68c-f0c4-4a66-98fe-f55265c70851"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}+" "+$F{apellido}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="25" width="555" height="1" uuid="a3711a02-c35b-40cb-a83f-24efc67d6806"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

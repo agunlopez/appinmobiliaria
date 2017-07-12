@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contrato" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="366c5780-83c8-4dca-a606-f71d3b69ac87">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="236"/>
+	<parameter name="dias" class="java.lang.Integer"/>
+	<parameter name="mes" class="java.lang.String"/>
+	<parameter name="año" class="java.lang.Integer"/>
+	<parameter name="inquilino" class="java.lang.String"/>
+	<parameter name="domicilioInquilino" class="java.lang.String"/>
+	<parameter name="ciudadInquilino" class="java.lang.String"/>
+	<parameter name="propietario" class="java.lang.String"/>
+	<parameter name="domicilioPropietario" class="java.lang.String"/>
+	<parameter name="nacimientoInquilino" class="java.lang.String"/>
+	<parameter name="estadoCiviilInq" class="java.lang.String"/>
+	<parameter name="apellidoMaternoInq" class="java.lang.String"/>
+	<parameter name="profesionInq" class="java.lang.String"/>
+	<parameter name="telefonoInq" class="java.lang.String"/>
+	<parameter name="ciudadPropietario" class="java.lang.String"/>
+	<parameter name="ciudadInmueble" class="java.lang.String"/>
+	<parameter name="detallesInmueble" class="java.lang.String"/>
+	<parameter name="dniInquilino" class="java.lang.Integer"/>
+	<parameter name="mesesContrato" class="java.lang.Integer"/>
+	<parameter name="fechaInicio" class="java.lang.String"/>
+	<parameter name="fechaFin" class="java.lang.String"/>
+	<parameter name="domicilioInmueble" class="java.lang.String"/>
+	<parameter name="idContrato" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT * from contrato INNER JOIN inmueble on contrato.idInmueble=inmueble.idInmueble INNER JOIN cliente as prop on prop.idCliente=inmueble.idPropietario INNER JOIN cliente as inq on inq.idCliente=contrato.idInquilino INNER JOIN  cliente as gara on gara.idCliente=contrato.idGarante INNER JOIN  cliente as gara2 on gara2.idCliente=contrato.idGarante2
+WHERE contrato.idContrato=$P{idContrato}]]>
+	</queryString>
+	<field name="idContrato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idInmueble" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idInquilino" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idGarante" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idGarante2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaComienzo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaVencimiento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cuota" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cuotaActual" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="garantia" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cuotasGarantia" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="punitorios" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="comicion" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="diadePago" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idPropietario" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="calle" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="piso" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dpto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="localidad" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="folio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="folioReal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tomo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaInscripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="provincia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idCliente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellido" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidoMaterno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dni" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cuit" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="correo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaNacimiento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estadoCivil" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="profesion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="domicilio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ciudad" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dgi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="celular" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="habilitado" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="286" height="24" uuid="41d877a3-224b-4ec3-9d5b-04f6ba6f4a9b"/>
+				<textElement>
+					<font fontName="Arial" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONTRATO DE LOCACION]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="4" width="100" height="20" uuid="271f293f-e64e-4397-882c-3e92efd9ff38"/>
+				<textFieldExpression><![CDATA[$F{idContrato}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="509" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="89" uuid="35d6a3da-cf68-4c01-acc7-18af6fb54338"/>
+				<textElement>
+					<font fontName="Arial" size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["A los "+$P{dias}+" días del mes de "+$P{mes}+" del año "+$P{año}+", entre "+$P{propietario}+", con domicilio en calle "+$P{domicilioPropietario}+", de la ciudad de "+$P{ciudadPropietario}+" y en adelante LA LOCADORA, y por la otra en Adelante llamado LOCATARIA, entre "+$P{inquilino}+" argentina, nacido el "+$P{nacimientoInquilino}+", estado civil "+$P{estadoCiviilInq}+", apellido materno "+$P{apellidoMaternoInq}+" , profesión "+$P{profesionInq}+" ,con domicilio en calle "+$P{domicilioInquilino}+" de la ciudad de "+$P{ciudadInquilino}+", ("+$P{telefonoInq}+") todos Argentinos, mayores de edad y hábiles para este acto convienen de común acuerdo en celebrar el presente contrato de locación que se regirá a tenor de las siguientes cláusulas:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="204" width="555" height="76" uuid="79e9d9f9-2904-48dd-a638-c8caf06af6a0"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El destino del inmueble objeto de este contrato, es de comercio para la locataria, no pudiendo modificar su destino.- El locatario no podrá subarrendar, ni ceder, ni prestar total o parcialmente, en forma gratuita u onerosa,, aun en el supuesto de ausencia temporaria, a persona física  o de existencia ideal, aun cuando sea socio de ella, ni constituir sociedades, ni transferir ese contrato, ni permutar, renunciando al beneficio del Art. 1598 de l CC. La violación a esta clausula dará derecho a exigir el inmediato desalojo de la finca"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="383" width="555" height="51" uuid="48b3ca07-61fa-443f-8433-263fc82ee895"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El termino de la locacion es de "+$P{mesesContrato}+" meses a partir del "+$P{fechaInicio}+" hasta el "+$P{fechaFin}+",  siendo el mismo improrrogable."+
+"La parte locataria podra rescindir unilateral y anticipadamente el presente contrato de acuerdo al art. 8 de la ley 23091 bajo las siguientes condiciones "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="109" width="555" height="75" uuid="ab0a60bf-45b8-4665-ba33-45b19750b127"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["La locadora cede y dà en locación al Locatario y éste acepta de plena conformidad el inmueble, de propiedad de aquella, ubicado en calle "+$P{domicilioInmueble}+" de la ciudad de "+$P{ciudadInmueble}+". El inmueble consiste en lo siguiente: este detalle."+
+"La que será ocupado por "+$P{inquilino}+
+", en caso de que se modificara la persona que atiende dicho local la misma deberá ser comunicada por escrito en forma fehaciente"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="280" width="555" height="32" uuid="5d018bd0-9f5c-469f-9a3a-96a1ed4264a8"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[ARTÍCULO 1205.- Prohibición de variar el destino. El locatario puede usar y gozar de la cosa conforme a derecho y exclusivamente para el destino correspondiente. No puede variarlo aunque ello no cause perjuicio al locador.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="312" width="555" height="51" uuid="75d3ff92-f389-420e-b7a7-36f3061fefe6"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[ARTÍCULO 1213.- Cesión. El locatario sólo puede ceder su posición contractual en los términos previstos en los artículos 1636 y siguientes. La cesión que no reúna tales requisitos viola la prohibición de variar el destino de la cosa locada.La prohibición contractual de ceder importa la de sublocar y viceversa.Se considera cesión a la sublocación de toda la cosa.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="434" width="555" height="32" uuid="209e01f3-dd6d-40b6-9c83-f5dfcc7c0352"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[1.- Debera estar al dia con todos los pagos emergentes del presente contrato cualquiera sea su naturaleza, impuestos, tasas, servicios, multas y gastos honorarios y o cualquier otro concepto."]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="466" width="555" height="33" uuid="756fd37e-43e5-4307-a2d9-6a3456664d03"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[2.- Debera notificar a la parte  locadora su intencion de rescindir el contrato con no menos de sesenta dias (60) de antelacion a la fecha en que se hara efectiva la desocupacion del inmueble."]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="89" width="100" height="20" uuid="c49d5242-5c28-4363-acc4-58fce7c77b24"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRIMERA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="184" width="100" height="20" uuid="c92c1b74-355b-44e4-a633-92b23700c3bf"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEGUNDA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="363" width="100" height="20" uuid="61f3b94b-7290-43db-b314-5a91d46ffa30"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TERCERA:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

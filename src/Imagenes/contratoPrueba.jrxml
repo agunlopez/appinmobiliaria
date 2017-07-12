@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contratoPrueba" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c18c8e27-ecd1-4b4a-ac13-9ebe23ad08c6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.callouts" value="##Thu Jun 01 18:16:48 ART 2017"/>
+	<queryString>
+		<![CDATA[SELECT cliente.apellido,cliente.nombre,cliente.dni FROM cliente INNER JOIN inmueble ON cliente.idCliente=inmueble.idPropietario INNER JOIN contrato on inmueble.idInmueble=contrato.idInmueble WHERE contrato.idContrato=2]]>
+	</queryString>
+	<field name="apellido" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dni" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="157" y="0" width="240" height="27" uuid="1025e22b-25d2-4337-8924-b692dda4776a"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="Arial" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONTRATO DE LOCACION]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<elementGroup/>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="125" uuid="d685e3ed-6941-42e3-baa2-d1de57b1a950"/>
+				<text><![CDATA[A los ….. días del mes de Marzo del año 2017, entre                                                                                                        , con domicilio en calle Independencia N°1452, de la ciudad de Tostado, Prov. de Santa Fe y en adelante LA LOCADORA, y por la otra en Adelante llamado LOCATARIA, entre el Sra. SALA MARIA ESTELA D.N.I. Nº 28.331.921 argentina, nacida el 04 de Febrero del año 1991, estado civil soltera, apellido materno Mendoza profesión Docente ,con domicilio en calle La Pampa ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="255" y="0" width="100" height="20" uuid="6265e868-b766-43a8-a04f-2e9cbe0e6810"/>
+				<textFieldExpression><![CDATA[$F{apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="318" y="0" width="100" height="20" uuid="d6f02205-629a-47ba-b576-a715f35eaa53"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="418" y="0" width="100" height="20" uuid="fe6e53f3-0ad6-4e74-bdc9-1e5dee1e97db"/>
+				<textFieldExpression><![CDATA[$F{dni}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="455" y="34" width="100" height="20" uuid="34e52556-1666-4261-8af0-29c4fda95bf1"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

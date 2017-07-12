@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="396" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="28b3a7ab-b31a-46cc-b999-81d277ce323c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Recibo" class="java.lang.Integer"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Nahuel\\Desktop\\SM Inmobiliaria\\src\\Recibos\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT contratocuota.idContrato,contratocuota.nroCuota,contratocuota.punitorios,
+contratocuota.valorCuota,contratocuota.valorGarantia,contratocuota.totalPagado,
+contratocuota.descuento,movimientos.recibo,movimientos.valorMov,movimientos.fecha FROM `contratocuota` INNER JOIN movimientos on contratocuota.idContrato=movimientos.idContrato AND contratocuota.nroCuota=movimientos.nroCuota
+WHERE movimientos.recibo=$P{Recibo}]]>
+	</queryString>
+	<field name="idContrato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nroCuota" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="punitorios" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valorCuota" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valorGarantia" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="totalPagado" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descuento" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="recibo" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valorMov" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="90" height="60" uuid="a1a2e195-6b74-4222-86d4-f24cee4c1fce"/>
+				<imageExpression><![CDATA["C:\\Users\\Nahuel\\Desktop\\SM Inmobiliaria\\src\\Imagenes\\smLogo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="110" y="0" width="100" height="20" uuid="69d5a030-2e97-4621-9b3d-79896e6ee1a7"/>
+				<text><![CDATA[SM Inmobiliaria]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="20" width="138" height="20" uuid="43d8d659-773b-4971-bff6-47c92e87faa2"/>
+				<text><![CDATA[12 de Ocrubre y Santa Fe ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="59" width="100" height="20" uuid="8c907280-6710-41d5-a56a-d7f0cfcf38bf"/>
+				<text><![CDATA[Tel: 04842469846]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="339" y="0" width="41" height="20" uuid="8bebaa15-8f88-44fa-83b7-40a32ea938a1"/>
+				<text><![CDATA[Recibo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="339" y="20" width="41" height="20" uuid="33ed7bd9-b835-4057-be91-8146c9fb212d"/>
+				<text><![CDATA[Fecha: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="0" width="100" height="20" uuid="7730be30-513a-48cb-a08d-bf992f603294"/>
+				<textFieldExpression><![CDATA[$F{recibo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="20" width="100" height="20" uuid="e5687b1e-1f19-4550-81f0-333aa5d2df2c"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="110" y="39" width="100" height="20" uuid="8bb5b9cb-cd7b-43fb-9eb3-2e8ba6ef2ac8"/>
+				<text><![CDATA[Tostado - Santa Fe]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="100" height="20" uuid="e752ef04-526b-4bcf-be54-c25e3da828bb"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Concepto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="148" y="2" width="100" height="20" uuid="bc0bd43f-5320-448d-9d42-1917f8f45955"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Importe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="2" width="100" height="20" uuid="c7425ac0-e645-44b1-90d3-1c13bc1086b7"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Concepto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="413" y="0" width="100" height="20" uuid="430804f4-a2c5-40e8-92e9-368c720662ce"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Importe]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="82" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="20" width="100" height="20" uuid="146dcce1-bf14-4780-afba-616fcfc0abcc"/>
+				<text><![CDATA[Garantia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="0" width="100" height="20" uuid="722ca39a-9df0-429a-baa7-54ec421cc59b"/>
+				<text><![CDATA[Descuento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="20" width="100" height="20" uuid="abd6a25a-45cf-4652-9668-91fabdf19317"/>
+				<text><![CDATA[Punitorios]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="148" y="0" width="100" height="20" uuid="ca5add5d-70a8-489f-afc4-eb9bdd2512ad"/>
+				<textFieldExpression><![CDATA[$F{valorCuota}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="148" y="20" width="100" height="20" uuid="fe74e12e-ff5c-4273-9072-80becc1a257a"/>
+				<textFieldExpression><![CDATA[$F{valorGarantia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="0" width="100" height="20" uuid="247e94b4-0792-4612-90fd-485a10926a23"/>
+				<textFieldExpression><![CDATA[$F{descuento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="20" width="100" height="20" uuid="d231c97a-7197-467e-be23-78496ba271c0"/>
+				<textFieldExpression><![CDATA[$F{punitorios}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="44466634-c503-436d-8375-f76ede98a6db"/>
+				<textFieldExpression><![CDATA["Alquiler Cuota "+$F{nroCuota}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="40" width="555" height="42" uuid="9ea65275-ed66-4864-ab3e-593b176bc59b"/>
+				<subreportParameter name="Recibo">
+					<subreportParameterExpression><![CDATA[$P{Recibo}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["C:\\Users\\Nahuel\\Desktop\\SM Inmobiliaria\\src\\Recibos\\reciboInquilino_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="136" y="0" width="12" height="20" uuid="7f8f10f6-8f47-42e6-b2aa-9f48b524e7f0"/>
+				<text><![CDATA[$]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="136" y="20" width="12" height="20" uuid="be59b705-51eb-4555-bcdc-8bbab6c018bc"/>
+				<text><![CDATA[$]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="401" y="0" width="12" height="20" uuid="419b2deb-e21d-41e6-91bf-c553d353d723"/>
+				<text><![CDATA[$]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="401" y="20" width="12" height="20" uuid="4cd0feb0-3a59-4018-ab37-9b7db12d2b19"/>
+				<text><![CDATA[$]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="355" y="0" width="100" height="20" uuid="ac64bd91-da8c-4113-8261-ab1503edf203"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IMPORTE:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="99ba2120-f82b-48e8-ab86-42fbe2fbdd36"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valorMov}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="443" y="0" width="12" height="20" uuid="a3046bbd-3307-4097-a726-b43cfd6231a5"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[$]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
