@@ -2298,7 +2298,7 @@ AltaPropietario alta=new AltaPropietario();
     private void menuManualUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuManualUsuarioActionPerformed
 
          try {
-            File path = new File("C:\\Users\\Nahuel\\Desktop\\SM Inmobiliaria\\src\\Manual\\Manual.pdf");
+            File path = new File("C:\\Users\\Usuario\\Desktop\\Tesis\\SM Inmobiliaria\\src\\Manual\\Manual.pdf");
             Desktop.getDesktop().open(path);
         } catch (IOException ex) {
             ex.printStackTrace();

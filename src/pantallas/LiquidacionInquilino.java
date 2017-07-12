@@ -558,7 +558,7 @@ char validar=evt.getKeyChar();
             Map parametro=new HashMap();
             
             parametro.put("Recibo",recibo); 
-            JasperReport reciboInquilino=JasperCompileManager.compileReport("C:\\Users\\Nahuel\\Desktop\\SM Inmobiliaria\\src\\Recibos\\reciboInq.jrxml");           
+            JasperReport reciboInquilino=JasperCompileManager.compileReport("C:\\Users\\Usuario\\Desktop\\Tesis\\SM Inmobiliaria\\src\\Recibos\\reciboInq.jrxml");           
             JasperPrint jasperPrint=JasperFillManager.fillReport(reciboInquilino, parametro, con.conexion());
             
             
